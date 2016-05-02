@@ -46,10 +46,10 @@ RUN a2enmod rewrite
 RUN sed -i 's@#RewriteBase /@RewriteBase /ebot-csgo@g' ${EBOT_HOME_WEB}/ebot-csgo-web/web/.htaccess
 
 # Konfigurationen kopieren
-COPY config.ini ${EBOT_HOME}/ebot-csgo/config/config.ini
+COPY cfg/config.ini ${EBOT_HOME}/ebot-csgo/config/config.ini
 COPY Match.php ${EBOT_HOME}/ebot-csgo/src/eBot/Match/Match.php
-COPY ebotv3.conf /etc/apache2/conf-enabled/ebotv3.conf
-COPY app_user.yml ${EBOT_HOME_WEB}/ebot-csgo-web/config/app_user.yml
+COPY cfg/ebotv3.conf /etc/apache2/conf-enabled/ebotv3.conf
+COPY cfg/app_user.yml ${EBOT_HOME_WEB}/ebot-csgo-web/config/app_user.yml
 COPY start.sh ${EBOT_HOME}/start.sh
 
 # NodeJS-Pakete installieren
